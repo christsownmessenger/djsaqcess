@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Saqcess — Radio & Club DJ in Ho, Volta Region</title>
+<meta name="description" content="Book DJ Saqcess for weddings, birthdays, and club events in Ho and the Volta Region. Radio DJ at West FM, mixtape producer, and event host.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', system-ui, sans-serif; background: #0a0710; }
+  .brand-gradient { background: linear-gradient(135deg,#f59e0b 0%,#ec4899 50%,#a855f7 100%); }
+  .brand-text { background: linear-gradient(135deg,#fcd34d 0%,#f9a8d4 50%,#d8b4fe 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .glass { background: rgba(18,12,28,.75); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,.06); }
+  .card-hover { transition: all .3s ease; }
+  .card-hover:hover { transform: translateY(-4px); border-color: rgba(236,72,153,.5); }
+  .glow-orb { position:absolute; border-radius:9999px; filter:blur(120px); pointer-events:none; }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-thumb { background: #2d1f3d; border-radius: 4px; }
+  .fade-in { animation: fadeIn .5s ease both; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform:none; } }
+</style>
+</head>
+<body class="min-h-screen text-slate-100 antialiased">
+
+<div class="glow-orb" style="top:-100px; left:50%; transform:translateX(-50%); width:600px; height:400px; background:rgba(236,72,153,.18);"></div>
+<div class="glow-orb" style="bottom:-100px; right:0; width:500px; height:500px; background:rgba(168,85,247,.10);"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="sticky top-0 z-40 glass border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <img id="navAvatar" src="" alt="" class="w-10 h-10 rounded-full object-cover border-2 border-amber-500/50" />
+      <div>
+        <span id="navName" class="block text-lg font-bold text-white"></span>
+        <span id="navRole" class="block text-[10px] uppercase tracking-widest text-slate-400 font-semibold"></span>
+      </div>
+    </a>
+    <button onclick="scrollToBooking()" class="relative group overflow-hidden rounded-full p-[1px]">
+      <span class="absolute inset-0 brand-gradient rounded-full"></span>
+      <span class="relative px-5 py-2.5 rounded-full text-xs font-semibold text-rose-100 flex items-center gap-2" style="background:#0a0710;">
+        <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z"/></svg>
+        Book Now
+      </span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative pt-16 pb-20 px-4 max-w-6xl mx-auto">
+  <div class="grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium text-amber-300 mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span id="heroBadge"></span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+        <span id="heroName"></span>
+      </h1>
+      <p id="heroRole" class="mt-3 text-base brand-text font-semibold"></p>
+      <p id="heroBio" class="mt-6 text-base text-slate-300 leading-relaxed"></p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <div class="flex items-center gap-2 px-4 py-2 rounded-xl glass">
+          <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2 9.5 9 2 9.5l6 5-2 7.5L12 18l6 4-2-7.5 6-5L14.5 9 12 2Z"/></svg>
+          <span id="heroRating" class="font-bold text-white"></span>
+          <span id="heroReviews" class="text-xs text-slate-400"></span>
+        </div>
+        <div class="flex items-center gap-2 px-4 py-2 rounded-xl glass text-sm text-slate-300">
+          <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="heroLocation"></span>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-4">
+        <button onclick="scrollToBooking()" class="px-8 py-4 brand-gradient rounded-xl text-black font-bold text-sm shadow-lg shadow-rose-500/25 hover:brightness-110 transition">
+          Book This Vendor
+        </button>
+        <a id="heroWhatsApp" href="#" target="_blank" class="px-8 py-4 glass rounded-xl font-semibold text-sm text-white hover:border-emerald-400/40 flex items-center gap-2">
+          <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="glass rounded-3xl p-3">
+        <img id="heroImage" src="" alt="" class="w-full h-96 object-cover rounded-2xl" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIALTIES ============ -->
+<section class="py-12 px-4 max-w-6xl mx-auto">
+  <h2 class="text-xs font-bold uppercase tracking-widest text-amber-400 mb-6 text-center">What I Do</h2>
+  <div id="specialties" class="flex flex-wrap justify-center gap-3"></div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section id="packages" class="py-20 px-4 max-w-6xl mx-auto">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-extrabold text-white">Packages & Pricing</h2>
+    <p class="text-slate-400 text-sm mt-2">Transparent pricing. No hidden fees. Inquire to confirm availability.</p>
+  </div>
+  <div id="packageGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="py-20 px-4 max-w-6xl mx-auto">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-extrabold text-white">Client Reviews</h2>
+  </div>
+  <div id="reviewGrid" class="grid md:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ============ BOOKING FORM ============ -->
+<section id="booking" class="py-20 px-4">
+  <div class="max-w-3xl mx-auto glass rounded-3xl p-8 sm:p-10">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-extrabold text-white">Book <span id="bookName"></span></h2>
+      <p class="text-slate-400 text-sm mt-2">Fill in your event details — the inquiry goes straight to my WhatsApp.</p>
+    </div>
+    <div class="space-y-4">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <input id="fName" type="text" placeholder="Your Full Name *" required class="rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);" />
+        <input id="fPhone" type="tel" placeholder="Your WhatsApp Number *" required class="rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-500" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);" />
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <select id="fPackage" class="rounded-xl px-4 py-3 text-sm text-white focus:outline-none" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);"></select>
+        <input id="fDate" type="date" required class="rounded-xl px-4 py-3 text-sm text-white focus:outline-none" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);" />
+      </div>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <input id="fLocation" type="text" placeholder="Event Location" value="Ho, Volta Region" class="rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);" />
+        <input id="fGuests" type="number" min="1" placeholder="Guest Count" value="100" class="rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);" />
+      </div>
+      <textarea id="fNotes" rows="3" placeholder="Any special requests? (song preferences, setup time, etc.)" class="w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 resize-none" style="background:rgba(10,7,16,.8); border:1px solid rgba(255,255,255,.08);"></textarea>
+
+      <button onclick="sendBooking()" class="w-full py-4 brand-gradient rounded-xl font-bold text-sm text-black shadow-lg flex items-center justify-center gap-2">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Send Inquiry on WhatsApp
+      </button>
+      <p class="text-[11px] text-slate-500 text-center">Typical response time: under 2 hours</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/5 py-10 px-4 text-center text-xs text-slate-500">
+  <p>© <span id="yr"></span> <span id="footName"></span>. All rights reserved.</p>
+  <p class="mt-2">Built by Shalom Prince-Dike · <a href="https://eventsphere-gh.vercel.app" class="text-amber-400 hover:underline">EventSphere GH</a></p>
+</footer>
+
+<script>
+/* ============================================================
+   SINGLE-VENDOR CONFIG
+   Change these 7 values per client. Everything else adapts.
+   ============================================================ */
+const VENDOR = {
+  name: 'DJ Saqcess',
+  role: 'Radio & Club DJ · Ho, Volta Region',
+  bio: 'Radio DJ at West FM, club and pub DJ, music promoter, and host at Agyenyame Studios. Creator and host of the show Beyond the Chat. Bringing energy, sharp mixing, and crowd control to every event across Ho and the Volta Region.',
+  rating: 4.9,
+  reviewsCount: 142,
+  location: 'Ho Central, Volta Region',
+  badge: 'Accepting 2026 Bookings',
+  whatsapp: '233548284804', // vendor's WhatsApp (no +)
+  avatar: 'djs.png',
+  heroImage: 'djsaqcess.jpg',
+  specialties: ['Radio DJ', 'Club DJ', 'Mixtape Producer', 'Sound & Lighting', 'MC Support', 'Live Mixing'],
+  packages: [
+  { name: 'Club / Pub DJ Set', duration: '4 hrs', price: 800, desc: 'High-energy club set with live mixing, transitions, and crowd control. Bring your own sound or use mine.' },
+  { name: 'Wedding Full-Day DJ Set', duration: '8 hrs', price: 2500, desc: 'Premium sound, MC support, ceremony + reception music, full lighting rig.' },
+  { name: 'Private Party DJ Package', duration: '4 hrs', price: 1200, desc: 'Birthdays, house parties, and outdoorings. Sound system, playlist curation, live mixing.' },
+  { name: 'Corporate Event DJ', duration: '5 hrs', price: 1800, desc: 'Professional sound, background ambiance, announcement support.' },
+  { name: 'Mixtape Production (Custom)', duration: 'Per project', price: 1500, desc: 'Custom mixtape production — your selection, professionally mixed, mastered, and delivered.' },
+  { name: 'Radio Show Hosting / Voiceover', duration: 'Per session', price: 600, desc: 'Radio show hosting, event voiceovers, and jingle production from Agyenyame Studios.' },
+  ],
+  reviews: [
+    { name: 'Ama D.', role: 'Bride, Ho', rating: 5, date: '2 weeks ago', text: 'DJ Saqcess made our wedding unforgettable. Perfect music for both the ceremony and reception. Our guests are still talking about it!' },
+    { name: 'Kwesi A.', role: 'Corporate Client, Accra', rating: 5, date: '1 month ago', text: 'Booked him for our company launch. Professional, punctual, and the crowd loved every minute. Highly recommended.' },
+    { name: 'Efua M.', role: 'Birthday Client, Ho', rating: 5, date: '3 weeks ago', text: 'He kept the party going all night. My daughter\'s 18th was perfect. Worth every cedi.' },
+  ],
+};
+
+/* ============================================================ */
+
+const ghs = (n) => 'GH₵ ' + n.toLocaleString();
+const stars = (n) => '★'.repeat(n);
+
+// Populate everything
+document.getElementById('navName').textContent = VENDOR.name;
+document.getElementById('navRole').textContent = VENDOR.role.split('·')[0].trim();
+document.getElementById('navAvatar').src = VENDOR.avatar;
+document.getElementById('heroName').textContent = VENDOR.name;
+document.getElementById('heroRole').textContent = VENDOR.role;
+document.getElementById('heroBio').textContent = VENDOR.bio;
+document.getElementById('heroRating').textContent = VENDOR.rating;
+document.getElementById('heroReviews').textContent = `(${VENDOR.reviewsCount} reviews)`;
+document.getElementById('heroLocation').textContent = VENDOR.location;
+document.getElementById('heroBadge').textContent = VENDOR.badge;
+document.getElementById('heroImage').src = VENDOR.heroImage;
+document.getElementById('bookName').textContent = VENDOR.name;
+document.getElementById('footName').textContent = VENDOR.name;
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Specialties
+document.getElementById('specialties').innerHTML = VENDOR.specialties.map(s => `
+  <span class="px-4 py-2 rounded-full glass text-xs font-medium text-slate-200">${s}</span>
+`).join('');
+
+// Packages
+document.getElementById('packageGrid').innerHTML = VENDOR.packages.map((p, i) => `
+  <div class="glass rounded-2xl p-6 card-hover flex flex-col justify-between">
+    <div>
+      <h3 class="text-lg font-bold text-white">${p.name}</h3>
+      <p class="text-xs text-slate-400 mt-1">${p.duration}</p>
+      <p class="text-xs text-slate-300 mt-4 leading-relaxed">${p.desc}</p>
+    </div>
+    <div class="mt-6 pt-4 border-t border-white/5">
+      <div class="flex items-baseline justify-between mb-4">
+        <span class="text-2xl font-extrabold text-white">${ghs(p.price)}</span>
+      </div>
+      <button onclick="quickBook(${i})" class="w-full py-2.5 rounded-lg text-xs font-bold brand-gradient text-black">
+        Inquire About This
+      </button>
+    </div>
+  </div>
+`).join('');
+
+// Reviews
+document.getElementById('reviewGrid').innerHTML = VENDOR.reviews.map(r => `
+  <div class="glass rounded-2xl p-6">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex gap-1 text-amber-400 text-sm">${stars(r.rating)}</div>
+      <span class="text-[11px] text-slate-500">${r.date}</span>
+    </div>
+    <p class="text-xs text-slate-300 italic leading-relaxed">"${r.text}"</p>
+    <div class="mt-6 pt-4 border-t border-white/5">
+      <h4 class="text-xs font-bold text-white">${r.name}</h4>
+      <span class="text-[10px] text-slate-400">${r.role}</span>
+    </div>
+  </div>
+`).join('');
+
+// Package dropdown in form
+document.getElementById('fPackage').innerHTML = VENDOR.packages.map(p =>
+  `<option value="${p.name} — ${ghs(p.price)}">${p.name} — ${ghs(p.price)}</option>`
+).join('');
+
+// Hero WhatsApp direct link
+const heroWa = `https://wa.me/${VENDOR.whatsapp}?text=${encodeURIComponent(`Hello ${VENDOR.name}, I found your site and I'd like to inquire about your services.`)}`;
+document.getElementById('heroWhatsApp').href = heroWa;
+
+// Actions
+function scrollToBooking() {
+  document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+}
+
+function quickBook(packageIndex) {
+  document.getElementById('fPackage').selectedIndex = packageIndex;
+  scrollToBooking();
+}
+
+function sendBooking() {
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const pkg = document.getElementById('fPackage').value;
+  const date = document.getElementById('fDate').value;
+  const location = document.getElementById('fLocation').value;
+  const guests = document.getElementById('fGuests').value;
+  const notes = document.getElementById('fNotes').value;
+
+  if (!name || !phone || !date) {
+    alert('Please fill in your name, phone, and event date.');
+    return;
+  }
+
+  const msg =
+    `Hello ${VENDOR.name},%0A%0AI'd like to book your services.%0A%0A` +
+    `*Name:* ${encodeURIComponent(name)}%0A` +
+    `*My WhatsApp:* ${encodeURIComponent(phone)}%0A` +
+    `*Package:* ${encodeURIComponent(pkg)}%0A` +
+    `*Event Date:* ${encodeURIComponent(date)}%0A` +
+    `*Location:* ${encodeURIComponent(location)}%0A` +
+    `*Guests:* ${encodeURIComponent(guests)}%0A` +
+    `*Notes:* ${encodeURIComponent(notes || 'None')}`;
+
+  window.open(`https://wa.me/${VENDOR.whatsapp}?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
